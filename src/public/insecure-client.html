@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cliente inseguro (solo con ENABLE_VULN_LABS)</title>
+  </head>
+  <body>
+    <p>
+      Ejemplo de almacenamiento de sesión en <code>localStorage</code>. Solo se
+      sirve si <code>ENABLE_VULN_LABS=true</code>. No usar en producción.
+    </p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get('token');
+      if (token) {
+        window.localStorage.setItem('sessionToken', token);
+      }
+    </script>
+  </body>
+</html>
